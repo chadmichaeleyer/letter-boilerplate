@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/sh
+
+opts="$TM_PANDOC_OPTS --template=$HOME/Documents/Projects/letter-boilerplate/template.tex"
+filename="$TM_FILEPATH"
+basename="${filename%.*}"
+if [ -f "$basename.tex" ]; then
+   cp "$basename.tex" "$basename-old.tex"
+fi
+if [ -f "$basename.pdf" ]; then
+   cp "$basename.pdf" "$basename-old.pdf"
+fi
+echo "&lt;pre&gt;"
+pandoc $opts -o "$basename.pdf" &amp;&amp; open "$basename.pdf"
+echo "&lt;/pre&gt;"</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^~@p</string>
+	<key>name</key>
+	<string>Typeset as Letter</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>text.html.markdown.pandoc</string>
+	<key>uuid</key>
+	<string>5623E00B-B49D-44B5-A37D-DBD6261E2FA1</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
