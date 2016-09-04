@@ -94,6 +94,9 @@
 % DOCUMENT
 %--------------------------------
 \begin{document}
+
+$if(body)$
+
 \small
 
 \vspace{1em}
@@ -134,6 +137,8 @@ $else$
 $endif$
 
 \clearpage
+
+$endif$
 
 \newgeometry{letterpaper, left=1.3in, right=35mm, top=2.125in, bottom=25mm}
 \ThisULCornerWallPaper{1}{envelope.pdf}
