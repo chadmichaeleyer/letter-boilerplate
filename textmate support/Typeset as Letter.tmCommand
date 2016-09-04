@@ -24,7 +24,7 @@ echo "&lt;/pre&gt;"</string>
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>keyEquivalent</key>
-	<string>^~@p</string>
+	<string>@r</string>
 	<key>name</key>
 	<string>Typeset as Letter</string>
 	<key>outputCaret</key>

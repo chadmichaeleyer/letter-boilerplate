@@ -59,6 +59,7 @@
 \newfontfamily\textother{Gentium}
 \newfontfamily\textaslprep{Gallaudet}
 \newcommand*{\textasl}[1]{\fontsize{60}{60}\textaslprep{#1}}
+\newfontfamily\textocr[Numbers=Uppercase,Ligatures={Common}]{Helvetica Bold}
 
 % Set paragraph break
 \setlength{\parskip}{1em}
@@ -119,11 +120,26 @@ $endif$
 
 $body$
 
+$if(signature)$
 \IfFileExists{signature.pdf}
 {
     \begin{FlushRight}  	\parbox[t]{0.6in}{\includegraphics[clip,angle=0,scale=.2]{signature.pdf}}
     \vspace*{-3\baselineskip}Chad Michael Eyer
     \end{FlushRight}
 }
+$else$
+    \begin{FlushRight}
+    \vspace*{2.875\baselineskip}Chad Michael Eyer
+    \end{FlushRight}
+$endif$
+
+\clearpage
+
+\newgeometry{letterpaper, left=1.3in, right=35mm, top=2.125in, bottom=25mm}
+\ThisULCornerWallPaper{1}{envelope.pdf}
+
+$for(to)$
+\large\textocr\uppercase{$to$}\\
+$endfor$
 
 \end{document}

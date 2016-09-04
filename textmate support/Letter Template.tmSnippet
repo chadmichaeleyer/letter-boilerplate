@@ -4,12 +4,11 @@
 <dict>
 	<key>content</key>
 	<string>---
-date:    2016-08-01
+date:    `date +%Y-%m-%d`
 author:  Chad Michael Eyer
 city:    Minneola
 subject: 
 to:
-- 
 - 
 - 
 - 
