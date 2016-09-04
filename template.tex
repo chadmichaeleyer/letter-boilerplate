@@ -59,7 +59,7 @@
 \newfontfamily\textother{Gentium}
 \newfontfamily\textaslprep{Gallaudet}
 \newcommand*{\textasl}[1]{\fontsize{60}{60}\textaslprep{#1}}
-\newfontfamily\textocr[Numbers=Uppercase,Ligatures={Common}]{Helvetica Bold}
+\newfontfamily\textocr[Numbers=Uppercase,Ligatures={Common}]{Hypatia Sans Pro Semibold}
 
 % Set paragraph break
 \setlength{\parskip}{1em}
@@ -103,7 +103,7 @@ $if(body)$
 
 \normalsize \sffamily
 $for(to)$
-$to$\\
+\textsc{\lowercase{$to$}}\\
 $endfor$
 
 \vspace{3em}
